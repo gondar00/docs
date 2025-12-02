@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Stretch AI Documentation",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -11,88 +11,33 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Stretch AI",
+        "tab": "Documentation",
         "groups": [
           {
             "group": "Introduction",
             "pages": [
-              "stretch-ai/what-is-stretch-ai",
-              "stretch-ai/why-choose-stretch-ai",
-              "stretch-ai/product-full-demo",
-              "stretch-ai/3-minute-interactive-demo"
+              "guides/what-is-stretch-ai",
+              "guides/why-choose-stretch-ai",
+              "guides/product-full-demo",
+              "guides/3-minute-interactive-demo"
             ]
           },
           {
             "group": "Getting Started",
             "pages": [
-              "stretch-ai/installation-and-setup",
-              "stretch-ai/trial-installation",
-              "stretch-ai/onboarding"
+              "guides/installation-and-setup",
+              "guides/trial-installation",
+              "guides/onboarding"
             ]
           },
           {
             "group": "Core Features",
             "pages": [
-              "stretch-ai/dashboard",
-              "stretch-ai/lists",
-              "stretch-ai/campaigns"
+              "guides/dashboard",
+              "guides/lists",
+              "guides/campaigns",
+              "guides/automations",
+              "guides/form-builder"
             ]
           }
         ]
@@ -144,9 +89,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/getstretchai",
+      "github": "https://github.com/gondar00",
+      "linkedin": "https://linkedin.com/company/stretch-ai"
     }
   }
 }
