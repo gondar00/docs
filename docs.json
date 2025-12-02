@@ -34,6 +34,7 @@
               "guides/dashboard",
               "guides/lists",
               "guides/campaigns",
+              "guides/templates",
               "guides/automations",
               "guides/form-builder"
             ]
