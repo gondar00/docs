@@ -25,9 +25,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "guides/installation-and-setup",
-              "guides/trial-installation",
-              "guides/onboarding"
+              "guides/installation-and-setup"
             ]
           },
           {
