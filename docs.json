@@ -38,6 +38,12 @@
               "guides/automations",
               "guides/form-builder"
             ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "guides/resources"
+            ]
           }
         ]
       }
