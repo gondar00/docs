@@ -66,6 +66,37 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Stretch AI",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "stretch-ai/what-is-stretch-ai",
+              "stretch-ai/why-choose-stretch-ai",
+              "stretch-ai/product-full-demo",
+              "stretch-ai/3-minute-interactive-demo"
+            ]
+          },
+          {
+            "group": "Getting Started",
+            "pages": [
+              "stretch-ai/installation-and-setup",
+              "stretch-ai/trial-installation",
+              "stretch-ai/onboarding"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "stretch-ai/dashboard",
+              "stretch-ai/conversations",
+              "stretch-ai/contacts",
+              "stretch-ai/campaigns"
+            ]
+          }
+        ]
       }
     ],
     "global": {
