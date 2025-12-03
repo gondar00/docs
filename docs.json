@@ -42,7 +42,8 @@
           {
             "group": "Resources",
             "pages": [
-              "guides/resources"
+              "guides/resources",
+              "guides/high-bounce-rate"
             ]
           }
         ]

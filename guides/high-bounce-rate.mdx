@@ -1,0 +1,536 @@
+---
+title: Why is My Bounce Rate So High?
+description: Troubleshooting guide for high WhatsApp message bounce rates, common errors, and solutions to improve message delivery.
+---
+
+# Why is My Bounce Rate So High?
+
+A high bounce rate means your WhatsApp messages aren't being delivered to recipients. This guide helps you identify the root causes and provides actionable solutions to improve your message delivery rates.
+
+## Understanding Bounce Rates
+
+**Bounce Rate** is the percentage of messages that fail to be delivered to recipients. A healthy bounce rate is typically below 5%. If your bounce rate is higher, it indicates issues with your messaging strategy, contact data quality, or WhatsApp policy compliance.
+
+<Warning>
+**High bounce rates can lead to:**
+- Wasted messaging costs
+- Reduced sender reputation
+- Account restrictions or suspension
+- Lower campaign ROI
+- Poor customer experience
+</Warning>
+
+## Common Causes of High Bounce Rates
+
+<AccordionGroup>
+  <Accordion title="Invalid or Outdated Phone Numbers">
+    The most common cause of bounces is sending messages to phone numbers that are:
+    - Incorrectly formatted
+    - No longer active
+    - Not registered on WhatsApp
+    - Entered with typos during collection
+  </Accordion>
+
+  <Accordion title="WhatsApp Policy Violations">
+    Messages that violate WhatsApp's policies are blocked, including:
+    - Sending marketing messages without opt-in
+    - Using unapproved message templates
+    - Sending prohibited content (spam, misleading info)
+    - Exceeding per-user marketing limits
+  </Accordion>
+
+  <Accordion title="Poor Contact List Quality">
+    Low-quality contact lists lead to high bounces:
+    - Purchased or scraped contact lists
+    - Old, unmaintained lists
+    - Lists without proper opt-in consent
+    - Duplicate or fake numbers
+  </Accordion>
+
+  <Accordion title="Message Template Issues">
+    Template-related problems cause delivery failures:
+    - Using rejected or pending templates
+    - Templates with policy violations
+    - Incorrect variable formatting
+    - Missing required template parameters
+  </Accordion>
+
+  <Accordion title="Rate Limiting and Throttling">
+    Sending too many messages too quickly:
+    - Exceeding WhatsApp messaging tier limits
+    - Hitting per-user marketing message limits
+    - Sending during restricted hours
+    - Overwhelming recipient inboxes
+  </Accordion>
+</AccordionGroup>
+
+## WhatsApp Error Categories
+
+### Category 1: Delivery Failures
+
+These errors indicate the message couldn't reach the recipient.
+
+<Tabs>
+  <Tab title="Invalid Phone Number">
+    **Error Code**: `131026`
+    
+    **Error Message**: "Recipient phone number not in WhatsApp"
+    
+    **Cause**: The phone number is not registered on WhatsApp or is incorrectly formatted.
+    
+    **Solutions**:
+    - Verify phone numbers include correct country code (e.g., +1 for US)
+    - Remove spaces, dashes, and special characters
+    - Test numbers before adding to campaigns
+    - Use WhatsApp's number validation API
+    - Clean your contact list regularly
+    
+    **Prevention**:
+    - Implement phone number validation at point of collection
+    - Use international phone number format (E.164)
+    - Verify numbers are WhatsApp-enabled before importing
+  </Tab>
+  
+  <Tab title="Number Blocked">
+    **Error Code**: `131031`
+    
+    **Error Message**: "Message undeliverable - recipient has blocked your number"
+    
+    **Cause**: The recipient has blocked your WhatsApp Business number.
+    
+    **Solutions**:
+    - Remove blocked contacts from your lists immediately
+    - Review why users are blocking you (content quality, frequency)
+    - Improve message relevance and personalization
+    - Provide easy opt-out options
+    
+    **Prevention**:
+    - Send only to engaged, opted-in users
+    - Don't over-message your audience
+    - Respect user preferences and opt-outs
+    - Monitor block rates as a quality metric
+  </Tab>
+  
+  <Tab title="Recipient Unavailable">
+    **Error Code**: `131047`
+    
+    **Error Message**: "Re-engagement message"
+    
+    **Cause**: The recipient hasn't used WhatsApp in an extended period.
+    
+    **Solutions**:
+    - Send re-engagement campaigns to inactive users
+    - Remove chronically inactive users (90+ days)
+    - Focus on recently active contacts
+    - Use other channels to re-engage dormant users
+    
+    **Prevention**:
+    - Segment lists by last active date
+    - Prioritize engaged users in campaigns
+    - Implement sunset policies for inactive contacts
+  </Tab>
+</Tabs>
+
+### Category 2: Policy and Compliance Errors
+
+These errors occur when messages violate WhatsApp's business policies.
+
+<Tabs>
+  <Tab title="Meta Chose Not to Deliver">
+    **Error Code**: `131051`
+    
+    **Error Message**: "Meta chose not to deliver your message"
+    
+    **Cause**: WhatsApp's quality filters determined the message shouldn't be delivered, often due to:
+    - Low engagement rates from this sender
+    - User marked previous messages as spam
+    - Per-user marketing limit reached
+    - Content quality concerns
+    
+    **Solutions**:
+    - **Improve message quality**: Make content more relevant and valuable
+    - **Segment better**: Target only highly engaged users
+    - **Reduce frequency**: Don't over-message the same users
+    - **Use utility messages**: For transactional content, use utility templates instead of marketing
+    - **Monitor engagement**: Track read rates and responses
+    
+    **Prevention**:
+    - Build engagement gradually with new contacts
+    - Send personalized, relevant content
+    - Respect per-user marketing limits
+    - Use A/B testing to optimize content
+    - Maintain high read and response rates
+  </Tab>
+  
+  <Tab title="Spam or Policy Violation">
+    **Error Code**: `131026` or `131008`
+    
+    **Error Message**: "Message failed due to spam or policy violation"
+    
+    **Cause**: Message content violates WhatsApp's Business Policy or Commerce Policy.
+    
+    **Solutions**:
+    - Review WhatsApp's Business Policy thoroughly
+    - Remove prohibited content (misleading claims, adult content, etc.)
+    - Ensure you have proper opt-in consent
+    - Use approved message templates only
+    - Don't send unsolicited marketing messages
+    
+    **Prevention**:
+    - Get explicit opt-in before sending marketing messages
+    - Use clear, honest messaging
+    - Follow template approval guidelines
+    - Regularly review policy updates
+    - Train team on compliance requirements
+  </Tab>
+  
+  <Tab title="Template Not Approved">
+    **Error Code**: `132000`
+    
+    **Error Message**: "Template status is not approved"
+    
+    **Cause**: Attempting to send a message using a template that hasn't been approved or has been rejected.
+    
+    **Solutions**:
+    - Check template status in Stretch AI dashboard
+    - Wait for pending templates to be approved
+    - Revise and resubmit rejected templates
+    - Use only approved templates for campaigns
+    
+    **Prevention**:
+    - Submit templates well in advance of campaigns
+    - Follow template guidelines carefully
+    - Test templates before large campaigns
+    - Keep a library of pre-approved templates
+  </Tab>
+  
+  <Tab title="Per-User Marketing Limit">
+    **Error Code**: `131053`
+    
+    **Error Message**: "Per-user marketing template message limit reached"
+    
+    **Cause**: The recipient has reached their limit for marketing messages from all businesses in a given timeframe.
+    
+    **Solutions**:
+    - **Wait and retry**: Try sending to these users later
+    - **Use utility messages**: If the content is transactional, use utility templates
+    - **Segment by engagement**: Prioritize highly engaged users who are less likely to hit limits
+    - **Reduce marketing frequency**: Space out marketing campaigns
+    
+    **Prevention**:
+    - Focus on quality over quantity
+    - Send to engaged users first
+    - Use utility templates for transactional content
+    - Monitor delivery rates by user segment
+    - Implement smart sending schedules
+    
+    **Understanding the Limit**:
+    WhatsApp limits marketing messages per user to prevent inbox overload. Factors include:
+    - Number of marketing messages user received from any business
+    - User's inbox activity
+    - User's recent engagement with marketing messages
+    
+    This ensures your messages reach users who are most likely to engage.
+  </Tab>
+</Tabs>
+
+### Category 3: Technical Errors
+
+These errors are related to technical issues with message formatting or system problems.
+
+<Tabs>
+  <Tab title="Invalid Template Parameters">
+    **Error Code**: `132001`
+    
+    **Error Message**: "Template parameter format mismatch"
+    
+    **Cause**: Template variables are incorrectly formatted or missing required values.
+    
+    **Solutions**:
+    - Verify all template variables are properly mapped
+    - Check data types match template requirements
+    - Ensure all required parameters are provided
+    - Test with sample data before sending
+    
+    **Prevention**:
+    - Use template preview feature
+    - Validate data before campaign launch
+    - Set up fallback values for optional parameters
+    - Document template variable requirements
+  </Tab>
+  
+  <Tab title="Rate Limit Exceeded">
+    **Error Code**: `131048`
+    
+    **Error Message**: "Rate limit hit"
+    
+    **Cause**: Sending messages too quickly, exceeding your WhatsApp messaging tier limit.
+    
+    **Solutions**:
+    - Slow down sending rate
+    - Upgrade your messaging tier if needed
+    - Implement message queuing
+    - Spread campaigns over longer periods
+    
+    **Prevention**:
+    - Understand your tier limits
+    - Plan campaign volume in advance
+    - Use Stretch AI's built-in rate limiting
+    - Request tier upgrades proactively
+  </Tab>
+  
+  <Tab title="System Error">
+    **Error Code**: `500` or `503`
+    
+    **Error Message**: "Temporary service error"
+    
+    **Cause**: Temporary WhatsApp platform issues or network problems.
+    
+    **Solutions**:
+    - Wait and retry after a few minutes
+    - Check WhatsApp Business Platform status
+    - Contact Stretch AI support if persistent
+    
+    **Prevention**:
+    - Implement automatic retry logic
+    - Monitor platform status before large sends
+    - Have backup communication channels ready
+  </Tab>
+</Tabs>
+
+## How to Diagnose Your Bounce Rate Issues
+
+Follow these steps to identify why your bounce rate is high:
+
+### Step 1: Check Your Bounce Rate Dashboard
+
+1. Navigate to **Dashboard** in Stretch AI
+2. Review **Campaign Metrics** section
+3. Look at bounce rate by:
+   - Campaign
+   - Message type (Marketing vs Utility)
+   - Time period
+   - Contact segment
+
+### Step 2: Analyze Error Codes
+
+1. Go to **Campaigns** > Select your campaign
+2. Click on **Failed Messages**
+3. Review error codes and messages
+4. Group errors by category
+5. Identify the most common error types
+
+### Step 3: Segment Your Analysis
+
+Break down bounce rates by:
+
+| Segment | What to Check | Normal Range |
+| :--- | :--- | :--- |
+| **New Contacts** | First-message bounce rate | < 10% |
+| **Engaged Users** | Repeat campaign bounce rate | < 3% |
+| **Inactive Users** | 60+ days no activity | 15-30% |
+| **Marketing Messages** | Marketing template bounces | < 8% |
+| **Utility Messages** | Transactional bounces | < 2% |
+
+### Step 4: Review Contact List Quality
+
+<Checklist>
+- [ ] All phone numbers include country codes
+- [ ] Numbers are in E.164 format (+1234567890)
+- [ ] Contacts have opted in to receive messages
+- [ ] List is regularly cleaned (remove bounces)
+- [ ] Duplicates have been removed
+- [ ] Numbers are verified as WhatsApp-enabled
+</Checklist>
+
+## Solutions to Reduce Bounce Rates
+
+### Immediate Actions
+
+<Steps>
+  <Step title="Clean Your Contact List">
+    - Remove all hard bounces (invalid numbers, blocked users)
+    - Verify phone number formatting
+    - Remove duplicates
+    - Segment by engagement level
+  </Step>
+  
+  <Step title="Review Message Templates">
+    - Ensure all templates are approved
+    - Check for policy violations
+    - Verify variable formatting
+    - Test templates before campaigns
+  </Step>
+  
+  <Step title="Adjust Campaign Strategy">
+    - Reduce sending frequency
+    - Target engaged users first
+    - Use utility templates for transactional content
+    - Implement re-engagement campaigns for inactive users
+  </Step>
+  
+  <Step title="Monitor and Iterate">
+    - Track bounce rates daily
+    - Set up alerts for unusual spikes
+    - A/B test different approaches
+    - Document what works
+  </Step>
+</Steps>
+
+### Long-Term Strategies
+
+<CardGroup cols={2}>
+  <Card title="Improve List Quality" icon="list-check">
+    - Implement double opt-in
+    - Validate numbers at collection
+    - Regular list hygiene (monthly)
+    - Remove inactive users (90+ days)
+    - Use progressive profiling
+  </Card>
+  
+  <Card title="Enhance Engagement" icon="heart">
+    - Send personalized content
+    - Segment by preferences
+    - Optimize send times
+    - Provide value in every message
+    - Make opt-out easy
+  </Card>
+  
+  <Card title="Optimize Templates" icon="file-lines">
+    - Follow approval guidelines
+    - Use clear, compliant language
+    - Test before submitting
+    - Maintain template library
+    - Update based on performance
+  </Card>
+  
+  <Card title="Respect Limits" icon="shield-check">
+    - Understand tier limits
+    - Monitor per-user limits
+    - Use utility when appropriate
+    - Space out marketing sends
+    - Track delivery rates
+  </Card>
+</CardGroup>
+
+## Bounce Rate Benchmarks
+
+Understanding what's normal helps you set realistic goals:
+
+| Industry | Average Bounce Rate | Good Bounce Rate | Excellent Bounce Rate |
+| :--- | :---: | :---: | :---: |
+| **Fitness & Wellness** | 8-12% | 5-8% | < 5% |
+| **Retail** | 10-15% | 6-10% | < 6% |
+| **Healthcare** | 6-10% | 4-6% | < 4% |
+| **Education** | 7-11% | 5-7% | < 5% |
+| **Professional Services** | 5-9% | 3-5% | < 3% |
+
+<Info>
+**Note**: These benchmarks assume:
+- Properly opted-in contact lists
+- Regular list maintenance
+- Compliant message templates
+- Appropriate send frequency
+</Info>
+
+## Preventing Future Bounce Rate Issues
+
+### Best Practices Checklist
+
+<AccordionGroup>
+  <Accordion title="✅ Contact Collection & Management">
+    - Use double opt-in for new contacts
+    - Validate phone numbers in real-time
+    - Store numbers in E.164 format
+    - Collect consent explicitly
+    - Document opt-in source and date
+    - Implement sunset policies (remove inactive users)
+    - Regular list cleaning (monthly minimum)
+  </Accordion>
+
+  <Accordion title="✅ Message Template Management">
+    - Submit templates early
+    - Follow WhatsApp guidelines strictly
+    - Test templates thoroughly
+    - Keep approved template library
+    - Monitor template status
+    - Update templates based on performance
+    - Document template use cases
+  </Accordion>
+
+  <Accordion title="✅ Campaign Strategy">
+    - Segment by engagement level
+    - Personalize message content
+    - Use utility templates for transactional messages
+    - Respect per-user marketing limits
+    - Optimize send times
+    - Monitor delivery rates
+    - Implement re-engagement workflows
+  </Accordion>
+
+  <Accordion title="✅ Monitoring & Optimization">
+    - Track bounce rates daily
+    - Set up bounce rate alerts
+    - Review error codes regularly
+    - A/B test messaging strategies
+    - Document successful approaches
+    - Train team on best practices
+    - Stay updated on WhatsApp policy changes
+  </Accordion>
+</AccordionGroup>
+
+## When to Contact Support
+
+Reach out to Stretch AI support at [gandharv@getstretch.ai](mailto:gandharv@getstretch.ai) if:
+
+- Bounce rate suddenly spikes (>20% increase)
+- You're seeing unfamiliar error codes
+- Approved templates are being rejected
+- You suspect a technical issue
+- You need help interpreting bounce data
+- You want guidance on list cleaning
+- You're planning a large campaign and want to optimize delivery
+
+## Additional Resources
+
+<CardGroup cols={2}>
+  <Card
+    title="WhatsApp Business Policy"
+    icon="shield-check"
+    href="https://www.whatsapp.com/legal/business-policy"
+  >
+    Official WhatsApp business messaging policies
+  </Card>
+  
+  <Card
+    title="Message Template Guidelines"
+    icon="file-lines"
+    href="https://developers.facebook.com/docs/whatsapp/message-templates/guidelines"
+  >
+    How to create compliant message templates
+  </Card>
+  
+  <Card
+    title="WhatsApp Pricing"
+    icon="dollar-sign"
+    href="/guides/resources"
+  >
+    Understand messaging costs and optimize spending
+  </Card>
+  
+  <Card
+    title="Campaign Best Practices"
+    icon="star"
+    href="/guides/campaigns"
+  >
+    Learn how to create effective campaigns
+  </Card>
+</CardGroup>
+
+---
+
+**Last Updated**: December 2025
+
+<Tip>
+**Pro Tip**: The best way to maintain low bounce rates is to focus on quality over quantity. A smaller, highly engaged list will always outperform a large, low-quality list in terms of deliverability, engagement, and ROI.
+</Tip>
